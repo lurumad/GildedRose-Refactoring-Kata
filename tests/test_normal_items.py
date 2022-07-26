@@ -2,7 +2,7 @@ from gilded_rose.gilded_rose import GildedRose
 from gilded_rose.normal import Normal
 
 
-class TestsNormalItem:
+class TestNormalItem:
     def test_quality_of_an_item_is_never_negative(self):
         items = [Normal(name="Normal", sell_in=0, quality=1)]
         gilded_rose = GildedRose(items)
