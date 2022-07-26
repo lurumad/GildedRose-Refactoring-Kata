@@ -10,6 +10,10 @@ class GildedRose(object):
                 self.normal_update_quality(self.items[i])
                 return
 
+            if "Aged Brie" == self.items[i].name:
+                self.aged_brie_update_quality(self.items[0])
+                return
+
             if "Aged Brie" != self.items[i].name and "Backstage passes to a TAFKAL80ETC concert" != self.items[i].name:
                 if self.items[i].quality > 0:
                     if "Sulfuras, Hand of Ragnaros" != self.items[i].name:
@@ -61,6 +65,21 @@ class GildedRose(object):
             item.quality = 0
         if item.quality > 50:
             item.quality = 50
+
+    @staticmethod
+    def aged_brie_update_quality(item):
+        item.sell_in -= 1
+        item.quality += 1
+        if item.sell_in <= 0:
+            item.quality = 0
+            return
+        if item.sell_in <= 10:
+            item.quality += 1
+        if item.sell_in <= 5:
+            item.quality += 1
+        if item.quality > 50:
+            item.quality = 50
+
 
 
 
