@@ -17,10 +17,6 @@ class GildedRose(object):
                 return
 
             if "Sulfuras, Hand of Ragnaros" == self.items[0].name:
-                self.sulfuras_update_quality(self.items[0])
+                self.items[i].update_quality()
                 return
         return self.items
-
-    @staticmethod
-    def sulfuras_update_quality(item):
-        return
