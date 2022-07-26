@@ -18,6 +18,10 @@ class GildedRose(object):
                 self.backstage_passes_update_quality(self.items[0])
                 return
 
+            if "Sulfuras, Hand of Ragnaros" == self.items[0].name:
+                self.sulfuras_update_quality(self.items[0])
+                return
+
             if "Aged Brie" != self.items[i].name and "Backstage passes to a TAFKAL80ETC concert" != self.items[i].name:
                 if self.items[i].quality > 0:
                     if "Sulfuras, Hand of Ragnaros" != self.items[i].name:
@@ -98,5 +102,8 @@ class GildedRose(object):
         if item.quality > 50:
             item.quality = 50
 
+    @staticmethod
+    def sulfuras_update_quality(item):
+        return
 
 
